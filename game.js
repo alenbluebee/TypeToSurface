@@ -50,18 +50,33 @@ function checkInput() {
 
 // ゲームの時間を管理する関数
 function manageTime() {
-    time -= 1;
-    document.getElementById('time').textContent = '残り時間：' + time + '秒';
-    // 時間が0になったらゲームオーバー
-    if (time <= 0) {
-        alert('時間切れです、ゲ申し訳ありません、上記のメッセージは途中で切れてしまいました。時間が0になった場合のゲームオーバーのメッセージと、ゲームの開始時に`manageTime`関数を呼び出す部分を補います：
-
-```javascript
-    if (time <= 0) {
-        alert('時間切れです、ゲームオーバーです。');
-        clearInterval(gameInterval);
-    }
+  time -= 1;
+  document.getElementById('time').textContent = '残り時間：' + time + '秒';
+  // 時間が0になったらゲームオーバー
+  if (time <= 0) {
+    alert('時間切れです、ゲームオーバーです。');
+    clearInterval(gameInterval);
+    resetGame();  // 追加したゲームリセット関数を呼び出す
+  }
 }
 
 // ゲームを開始する
-let gameInterval = setInterval(manageTime, 1000);
+let gameInterval = setInterval(manageTime, 1000);// ゲームの状態をリセットする関数
+function resetGame() {
+  // 深度、酸素、時間を初期値に戻す
+  depth = 300;
+  oxygen = 100;
+  time = 60;
+  // ランダムテキストを新しく生成
+  let newText = generateRandomText();
+  // HTML要素を更新
+  document.getElementById('depth').textContent = '現在の深度：' + depth + 'm';
+  document.getElementById('oxygen').textContent = '酸素残量：' + oxygen + '%';
+  document.getElementById('randomText').textContent = 'ランダムテキスト: ' + newText;
+  // タイマーを再開
+  gameInterval = setInterval(manageTime, 1000);
+}
+
+updateGame();  // ゲーム開始時にランダムテキストを表示する
+
+
