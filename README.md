@@ -17,3 +17,22 @@ The game duration is 60 seconds. If you can bring the submarine's depth to zero 
 1. Clone or download this repository.
 2. Open the downloaded directory and open index.html in your browser.
 3. Now the game starts. Enjoy! 
+# TypeToSurface: 潜水艦救出タイピングゲーム
+
+TypeToSurfaceは、タイピングスキルを駆使して潜水艦の深度をゼロにする、シンプルで楽しいゲームです。
+
+## ゲームのルール
+
+画面にはランダムに生成されたテキストが表示されます。テキストはアルファベットの大文字と小文字のみで構成されています。
+
+あなたのタスクは、表示されたテキストを正確に入力することです。
+
+正確にテキストを入力すると、潜水艦は10m浮上し、酸素残量が1%減少します。
+
+ゲーム時間は60秒間です。時間内に潜水艦の深度をゼロにすればゲームに勝利します。時間が経過すると、ゲームは終了します。
+
+## ゲームの開始方法
+
+1. このリポジトリをクローンまたはダウンロードします。
+2. ダウンロードしたディレクトリを開き、index.htmlをブラウザで開きます。
+3. これでゲームが始まります。楽しんでください！
